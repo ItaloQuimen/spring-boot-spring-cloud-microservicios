@@ -26,7 +26,7 @@ public class Item {
         this.quantity = quantity;
     }
 
-    public Double getTotal(){
+    public Double getTotal() {
         return product.getPrice() * quantity;
     }
 }
