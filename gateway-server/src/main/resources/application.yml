@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: msproducts
+              uri: lb://msproducts
+              predicates:
+                - Path=/api/products/**
+              filters:
+                - StripPrefix=2
+            - id: msitems
+              uri: lb://msitems
+              predicates:
+                - Path=/api/items/**
+              filters:
+                - StripPrefix=2
